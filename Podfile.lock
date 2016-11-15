@@ -1,10 +1,22 @@
 PODS:
   - CatalogByConvention (2.0.0)
-  - MaterialMotionPOPTransitions (1.0.0)
+  - MaterialMotionPopFamily (1.1.0):
+    - MaterialMotionRuntime (< 6.0, >= 4.0)
+    - pop (~> 1.0)
+  - MaterialMotionPOPTransitions (1.0.0):
+    - MaterialMotionPopFamily (~> 1.0)
+    - MaterialMotionRuntime (< 6.0, >= 4.0)
+    - MaterialMotionTransitions (~> 1.0)
+    - pop (~> 1.0)
+  - MaterialMotionRuntime (5.0.0)
+  - MaterialMotionTransitions (1.0.0):
+    - MaterialMotionRuntime (~> 5.0)
+  - pop (1.0.9)
 
 DEPENDENCIES:
   - CatalogByConvention
   - MaterialMotionPOPTransitions (from `./`)
+  - MaterialMotionRuntime (~> 5.0)
 
 EXTERNAL SOURCES:
   MaterialMotionPOPTransitions:
@@ -12,8 +24,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CatalogByConvention: be55c2263132e4f9f59299ac8a528ee8715b3275
-  MaterialMotionPOPTransitions: 7550632b867372a253c01ad8c091a3fc4fb3b0da
+  MaterialMotionPopFamily: a0022365ae4063720c27a417b00f175d31aebdff
+  MaterialMotionPOPTransitions: 5410c0cdf71573362fc3eb6b0bd90d31b7d31ae2
+  MaterialMotionRuntime: 620695e40aaf12f728342cef0b784b1d3eaa1125
+  MaterialMotionTransitions: 58cea2613b0d05e81cc1039c0c86984e74713bcb
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
 
-PODFILE CHECKSUM: 23fec1fc5efff9f1c64dad8dd2e62d7a48af99a5
+PODFILE CHECKSUM: ebe6c1ecafd561ae02e1192480ef0fdc01adba82
 
 COCOAPODS: 1.1.1

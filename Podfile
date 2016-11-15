@@ -1,4 +1,5 @@
 abstract_target 'MaterialMotionPOPTransitions' do
+  pod 'MaterialMotionRuntime', "~> 5.0"
   pod 'CatalogByConvention'
 
   pod 'MaterialMotionPOPTransitions', :path => './'
