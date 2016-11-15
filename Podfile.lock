@@ -1,0 +1,19 @@
+PODS:
+  - CatalogByConvention (2.0.0)
+  - MaterialMotionPOPTransitions (1.0.0)
+
+DEPENDENCIES:
+  - CatalogByConvention
+  - MaterialMotionPOPTransitions (from `./`)
+
+EXTERNAL SOURCES:
+  MaterialMotionPOPTransitions:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  CatalogByConvention: be55c2263132e4f9f59299ac8a528ee8715b3275
+  MaterialMotionPOPTransitions: 7550632b867372a253c01ad8c091a3fc4fb3b0da
+
+PODFILE CHECKSUM: 23fec1fc5efff9f1c64dad8dd2e62d7a48af99a5
+
+COCOAPODS: 1.1.1
