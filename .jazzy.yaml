@@ -1,10 +1,10 @@
-module: MaterialMotionPOPTransitions
+module: MaterialMotionPopTransitions
 module_version: 1.0.0
 sdk: iphonesimulator
 xcodebuild_arguments:
   - -workspace
-  - MaterialMotionPOPTransitions.xcworkspace
+  - MaterialMotionPopTransitions.xcworkspace
   - -scheme
-  - MaterialMotionPOPTransitions
+  - MaterialMotionPopTransitions
 github_url: https://github.com/material-motion/pop-transitions-swift
 github_file_prefix: https://github.com/material-motion/pop-transitions-swift/tree/v1.0.0

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
-  s.name         = "MaterialMotionPOPTransitions"
-  s.summary      = "POP transitions for Material Motion (Swift)"
+  s.name         = "MaterialMotionPopTransitions"
+  s.summary      = "POP Transitions for Material Motion (Swift)"
   s.version      = "1.0.0"
   s.authors      = "The Material Motion Authors"
   s.license      = "Apache 2.0"

@@ -1,4 +1,4 @@
-# POP transitions for Material Motion (Swift)
+# POP Transitions for Material Motion (Swift)
 
 [![Build Status](https://travis-ci.org/material-motion/pop-transitions-swift.svg?branch=develop)](https://travis-ci.org/material-motion/pop-transitions-swift)
 [![codecov](https://codecov.io/gh/material-motion/pop-transitions-swift/branch/develop/graph/badge.svg)](https://codecov.io/gh/material-motion/pop-transitions-swift)
@@ -14,9 +14,9 @@
 >
 >     gem install cocoapods
 
-Add `MaterialMotionPOPTransitions` to your `Podfile`:
+Add `MaterialMotionPopTransitions` to your `Podfile`:
 
-    pod 'MaterialMotionPOPTransitions'
+    pod 'MaterialMotionPopTransitions'
 
 Then run the following command:
 
@@ -26,7 +26,7 @@ Then run the following command:
 
 Import the framework:
 
-    @import MaterialMotionPOPTransitions;
+    @import MaterialMotionPopTransitions;
 
 You will now have access to all of the APIs.
 
@@ -38,7 +38,7 @@ commands:
     git clone https://github.com/material-motion/pop-transitions-swift.git
     cd pop-transitions-swift
     pod install
-    open MaterialMotionPOPTransitions.xcworkspace
+    open MaterialMotionPopTransitions.xcworkspace
 
 ## Guides
 
