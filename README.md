@@ -89,7 +89,7 @@ MDMTransitionSpring *spring = [[MDMTransitionSpring alloc] initWithProperty:"<#k
                                                                  transition:transition
                                                                        back:<#back value#>
                                                                        fore:<#fore value#>];
-[scheduler addPlan:spring to:<#Object#>];
+[runtime addPlan:spring to:<#Object#>];
 ```
 
 ***In Swift:***
@@ -100,7 +100,7 @@ let spring = TransitionSpring("<#key path#>",
                               transition: transition,
                               back: <#back value#>,
                               fore: <#fore value#>)
-transition.scheduler.addPlan(spring, to: <#Layer#>)
+transition.runtime.addPlan(spring, to: <#Layer#>)
 ```
 
 ## Contributing
