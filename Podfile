@@ -1,9 +1,9 @@
-abstract_target 'MaterialMotionPOPTransitions' do
+abstract_target 'MaterialMotionPopTransitions' do
   pod 'CatalogByConvention'
 
-  pod 'MaterialMotionPOPTransitions', :path => './'
+  pod 'MaterialMotionPopTransitions', :path => './'
 
-  workspace 'MaterialMotionPOPTransitions.xcworkspace'
+  workspace 'MaterialMotionPopTransitions.xcworkspace'
   use_frameworks!
 
   target "Catalog" do

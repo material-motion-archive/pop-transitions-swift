@@ -1,7 +1,41 @@
-# POP transitions for Material Motion (Swift)
+# POP Transitions for Material Motion (Swift)
 
 [![Build Status](https://travis-ci.org/material-motion/pop-transitions-swift.svg?branch=develop)](https://travis-ci.org/material-motion/pop-transitions-swift)
 [![codecov](https://codecov.io/gh/material-motion/pop-transitions-swift/branch/develop/graph/badge.svg)](https://codecov.io/gh/material-motion/pop-transitions-swift)
+
+## Supported languages
+
+- Swift 3
+- Objective-C
+
+## Features
+
+`TransitionSpring` makes it easy to describe bi-directional spring-based transitions.
+
+Consider the following example of a simple "slide in" transition director:
+
+```swift
+class SlideInTransitionDirector: NSObject, TransitionDirector {
+  let transition: Transition
+  required init(transition: Transition) {
+    self.transition = transition
+  }
+
+  func setUp() {
+    let midY = Double(transition.foreViewController.view.layer.position.y)
+    let height = Double(transition.foreViewController.view.bounds.height)
+    let slide = TransitionSpring("position.y",
+                                 transition: transition,
+                                 back: NSNumber(value: midY + height),
+                                 fore: NSNumber(value: midY))
+    transition.runtime.addPlan(slide, to: transition.foreViewController.view.layer)
+  }
+}
+```
+
+In this director we've defined a single TransitionSpring that handles both the forward and backward
+transition. Going forward, a `SpringTo` with destination midY is emitted. Going backward, a
+`SpringTo` with destination midY + height is emitted.
 
 ## Installation
 
@@ -14,9 +48,9 @@
 >
 >     gem install cocoapods
 
-Add `MaterialMotionPOPTransitions` to your `Podfile`:
+Add `MaterialMotionPopTransitions` to your `Podfile`:
 
-    pod 'MaterialMotionPOPTransitions'
+    pod 'MaterialMotionPopTransitions'
 
 Then run the following command:
 
@@ -26,7 +60,7 @@ Then run the following command:
 
 Import the framework:
 
-    @import MaterialMotionPOPTransitions;
+    @import MaterialMotionPopTransitions;
 
 You will now have access to all of the APIs.
 
@@ -38,16 +72,36 @@ commands:
     git clone https://github.com/material-motion/pop-transitions-swift.git
     cd pop-transitions-swift
     pod install
-    open MaterialMotionPOPTransitions.xcworkspace
+    open MaterialMotionPopTransitions.xcworkspace
 
 ## Guides
 
-1. [Architecture](#architecture)
-2. [How to ...](#how-to-...)
+1. [How to animate a CALayer property with a TransitionSpring plan](#how-to-animate-a-calayer-property-with-a-transitionspring-plan)
 
-### Architecture
+### How to animate a CALayer property with a TransitionSpring plan
 
-### How to ...
+Code snippets:
+
+***In Objective-C:***
+
+```objc
+MDMTransitionSpring *spring = [[MDMTransitionSpring alloc] initWithProperty:"<#key path#>"
+                                                                 transition:transition
+                                                                       back:<#back value#>
+                                                                       fore:<#fore value#>];
+[scheduler addPlan:spring to:<#Object#>];
+```
+
+***In Swift:***
+
+```swift
+
+let spring = TransitionSpring("<#key path#>",
+                              transition: transition,
+                              back: <#back value#>,
+                              fore: <#fore value#>)
+transition.scheduler.addPlan(spring, to: <#Layer#>)
+```
 
 ## Contributing
 
