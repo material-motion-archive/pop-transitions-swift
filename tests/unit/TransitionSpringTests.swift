@@ -26,11 +26,11 @@ class FakeDirector: NSObject, TransitionDirector {
   }
 }
 
-class TestableRuntimeDelegate: NSObject, RuntimeDelegate {
+class TestableRuntimeDelegate: NSObject, MotionRuntimeDelegate {
   var activityStateDidChange = false
   var didIdleExpectation: XCTestExpectation?
 
-  func runtimeActivityStateDidChange(_ runtime: Runtime) {
+  func motionRuntimeActivityStateDidChange(_ runtime: MotionRuntime) {
     self.activityStateDidChange = true
 
     if runtime.activityState == .idle {
@@ -43,17 +43,17 @@ class TransitionSpringTests: XCTestCase {
 
   var forwardTransition: Transition!
   var backwardTransition: Transition!
-  var runtime: Runtime!
+  var runtime: MotionRuntime!
   override func setUp() {
     forwardTransition = Transition(directorClass: FakeDirector.self,
-                                   timeWindow: .forward,
+                                   direction: .forward,
                                    back: UIViewController(),
                                    fore: UIViewController())
     backwardTransition = Transition(directorClass: FakeDirector.self,
-                                    timeWindow: .backward,
+                                    direction: .backward,
                                     back: UIViewController(),
                                     fore: UIViewController())
-    runtime = Runtime()
+    runtime = MotionRuntime()
   }
 
   func testSetsBackValueWhenTransitioningForward() {
