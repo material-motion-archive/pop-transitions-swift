@@ -16,6 +16,8 @@
 
 // MARK: Catalog by convention
 
+import MaterialMotionPopTransitions
+
 extension SlideInViewController {
   class func catalogBreadcrumbs() -> [String] {
     return ["Slide in"]

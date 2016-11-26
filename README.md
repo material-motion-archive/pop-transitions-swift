@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/material-motion/pop-transitions-swift.svg?branch=develop)](https://travis-ci.org/material-motion/pop-transitions-swift)
 [![codecov](https://codecov.io/gh/material-motion/pop-transitions-swift/branch/develop/graph/badge.svg)](https://codecov.io/gh/material-motion/pop-transitions-swift)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/MaterialMotionPopTransitions.svg)](https://cocoapods.org/pods/MaterialMotionPopTransitions)
+[![Platform](https://img.shields.io/cocoapods/p/MaterialMotionPopTransitions.svg)](http://cocoadocs.org/docsets/MaterialMotionPopTransitions)
+[![Docs](https://img.shields.io/cocoapods/metrics/doc-percent/MaterialMotionPopTransitions.svg)](http://cocoadocs.org/docsets/MaterialMotionPopTransitions)
 
 ## Supported languages
 
