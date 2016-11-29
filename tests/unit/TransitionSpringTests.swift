@@ -26,19 +26,6 @@ class FakeDirector: NSObject, TransitionDirector {
   }
 }
 
-class TestableRuntimeDelegate: NSObject, MotionRuntimeDelegate {
-  var activityStateDidChange = false
-  var didIdleExpectation: XCTestExpectation?
-
-  func motionRuntimeActivityStateDidChange(_ runtime: MotionRuntime) {
-    self.activityStateDidChange = true
-
-    if runtime.activityState == .idle {
-      didIdleExpectation?.fulfill()
-    }
-  }
-}
-
 class TransitionSpringTests: XCTestCase {
 
   var forwardTransition: Transition!
@@ -81,7 +68,7 @@ class TransitionSpringTests: XCTestCase {
     let view = UIView()
     view.layer.opacity = 0.5
 
-    let delegate = TestableRuntimeDelegate()
+    let delegate = ExpectableRuntimeDelegate()
     delegate.didIdleExpectation = expectation(description: "Did idle")
     runtime.delegate = delegate
 
@@ -89,7 +76,7 @@ class TransitionSpringTests: XCTestCase {
 
     waitForExpectations(timeout: 1)
 
-    XCTAssertEqual(runtime.activityState, .idle)
+    XCTAssertFalse(runtime.isActive)
     XCTAssertEqual(view.layer.opacity, 1)
   }
 
@@ -98,7 +85,7 @@ class TransitionSpringTests: XCTestCase {
     let view = UIView()
     view.layer.opacity = 0.5
 
-    let delegate = TestableRuntimeDelegate()
+    let delegate = ExpectableRuntimeDelegate()
     delegate.didIdleExpectation = expectation(description: "Did idle")
     runtime.delegate = delegate
 
@@ -106,7 +93,7 @@ class TransitionSpringTests: XCTestCase {
 
     waitForExpectations(timeout: 1)
 
-    XCTAssertEqual(runtime.activityState, .idle)
+    XCTAssertFalse(runtime.isActive)
     XCTAssertEqual(view.layer.opacity, 0)
   }
 }
